@@ -4,9 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 
@@ -14,10 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Entreprise {
+@Table(name = "entreprise")
+public class Entreprise extends AbstractClasse{
 
-    @Id
-    private Long id ;
+    /*@Id
+    private Long id ;*/
+
+    @Column(name = "adresse")
+    private String adresse;
 
     @OneToMany(mappedBy = "entreprise")
     private List<Article> articles;

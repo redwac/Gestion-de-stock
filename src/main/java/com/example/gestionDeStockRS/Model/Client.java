@@ -4,20 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Client {
+@Table(name = "client")
+public class Client extends AbstractClasse{
 
-    @Id
-    private Long id;
+    /*@Id
+    private Long id;*/
 
+    @Column(name = "nomClient")
     private String nom;
 
     @OneToMany(mappedBy = "client")

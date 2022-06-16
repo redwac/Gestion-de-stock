@@ -4,20 +4,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Category {
+@Table(name = "Category")
+public class Category extends AbstractClasse{
 
-    @Id
-    private Long id;
+    /*@Id
+    @SequenceGenerator(
+            name = "Category_sequence",
+            sequenceName = "student_sequence",
+            allocationSize = 1
+    )
+    private Long id;*/
 
+    @Column(name = "description")
     private String description;
 
     @OneToMany(mappedBy = "category")
