@@ -11,11 +11,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class CommandeClient {
+@Table(name = "commandeClient")
+public class CommandeClient extends AbstractClasse{
 
-    @Id
-    private Long id;
+    /*@Id
+    private Long id;*/
 
+    @Column(name = "codeCommande")
     private String codeCommande;
 
     @OneToMany(mappedBy = "commandeClient")

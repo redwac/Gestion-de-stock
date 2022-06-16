@@ -4,20 +4,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class LigneCommandeClient {
+@Table(name = "ligneCommandeClient")
+public class LigneCommandeClient extends AbstractClasse{
 
-    @Id
-    private Long id ;
+    /*@Id
+    private Long id ;*/
 
+    @Column(name = "codeLigneCommande")
     private String codeLC;
 
     @ManyToOne

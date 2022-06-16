@@ -10,12 +10,20 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Utilisateur {
+@Table(name = "utilisateur", uniqueConstraints = {@UniqueConstraint(name = "utilisateur_email_unique", columnNames = "email")})
+public class Utilisateur extends AbstractClasse{
 
-    @Id
-    private Long id;
+    /*@Id
+    private Long id;*/
 
+    @Column(name = "userName")
     private String nom;
+
+    @Column(name = "userLastName")
+    private String prenom;
+
+    @Column(name = "email")
+    private String email;
 
     @ManyToOne
     @JoinColumn(name = "entrepriseId")
