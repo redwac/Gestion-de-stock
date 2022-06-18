@@ -1,7 +1,9 @@
 package com.example.gestionDeStockRS;
 
 import com.example.gestionDeStockRS.Model.Article;
+import com.example.gestionDeStockRS.Model.Category;
 import com.example.gestionDeStockRS.Repository.ArticleRepository;
+import com.example.gestionDeStockRS.Repository.CategoryRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,12 +16,11 @@ public class GestionDeStockRsApplication {
 		SpringApplication.run(GestionDeStockRsApplication.class, args);
 	}
 	@Bean
-	CommandLineRunner commandLineRunner(ArticleRepository articleRepository){
+	CommandLineRunner commandLineRunner(CategoryRepository categoryRepository) {
 		return args -> {
-			Article reda = new Article(
-					"reda","sabbane","sab@gmail.com",35
-			);
-			articleRepository.save(reda);
-		};
+			Category category1 = new Category(1L,"informatique", null);
 
+			categoryRepository.save(category1);
+		};
+	}
 }
