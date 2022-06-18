@@ -44,7 +44,7 @@ public class ConfigurationClasse {
             categoryRepository.save(category1);
 
             Article art1 = new Article("AR_D1", "HDD", null,null,null );
-            Article art2 =new Article("AR_D1","HDD",null,null,null);
+            Article art2 =new Article("AR_D2","Ordinateur",null,null,null);
 
             articleRepository.saveAll(List.of(art1,art2));
 
@@ -67,6 +67,11 @@ public class ConfigurationClasse {
             Client nirvana = new Client("curt","cuben",null);
             Client mettalica = new Client("jamse","Hetfield",null);
             clientRepository.saveAll(List.of(nirvana,mettalica));
+
+            Article art3 = new Article("AR_D3", "clavier", null,null,null );
+            Article art4 =new Article("AR_D4","souri",null,null,null);
+
+            articleRepository.saveAll(List.of(art3,art4));
         };
 
 

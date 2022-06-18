@@ -21,7 +21,7 @@ public class CategoryClontroller {
         this.categoryService = categoryService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Category> getCategory(){
         return categoryService.getCategory();
     }
