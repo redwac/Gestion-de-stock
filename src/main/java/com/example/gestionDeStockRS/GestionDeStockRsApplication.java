@@ -15,12 +15,6 @@ public class GestionDeStockRsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GestionDeStockRsApplication.class, args);
 	}
-	@Bean
-	CommandLineRunner commandLineRunner(CategoryRepository categoryRepository) {
-		return args -> {
-			Category category1 = new Category(1L,"informatique", null);
 
-			categoryRepository.save(category1);
-		};
-	}
+
 }

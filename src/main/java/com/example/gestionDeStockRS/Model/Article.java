@@ -30,6 +30,9 @@ public class Article extends AbstractClasse{
     @Column(name = "id", updatable = false)
     private Long id;*/
 
+    @Column(name = "codeArticle")
+    private String codeArticle;
+
     @Column(name = "nomArticle", nullable = false)
     private String nomArticle;
 
@@ -43,4 +46,8 @@ public class Article extends AbstractClasse{
     @ManyToOne
     @JoinColumn(name = "entrepriseId")
     private Entreprise entreprise;
+
+    public Article(String codeArticle, String nomArticle) {
+    }
+
 }
