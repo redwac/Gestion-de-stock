@@ -12,19 +12,25 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name = "Category")
-public class Category extends AbstractClasse{
+public class Category  {
 
-    /*@Id
+    @Id
     @SequenceGenerator(
             name = "Category_sequence",
             sequenceName = "student_sequence",
             allocationSize = 1
     )
-    private Long id;*/
+    private Long id;
+
 
     @Column(name = "description")
     private String description;
 
     @OneToMany(mappedBy = "category")
     List<Article> articles ;
+
+    public Category(long id, String description) {
+        this.id = id;
+        this.description = description;
+    }
 }

@@ -21,9 +21,9 @@ public class AbstractClasse implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence_r")
     private Long id;
 
-    @Column(name = "dateInit", nullable = false, updatable = false)
+    @Column(name = "dateInit", nullable = true, updatable = false)
     private Instant dateInit;
 
-    @Column(name = "dateMaj", nullable = false)
+    @Column(name = "dateMaj", nullable = true)
     private Instant dateMaj;
 }

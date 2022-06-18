@@ -20,6 +20,9 @@ public class Client extends AbstractClasse{
     @Column(name = "nomClient")
     private String nom;
 
+    @Column(name = "prenomClient")
+    private String prenom;
+
     @OneToMany(mappedBy = "client")
     private List<CommandeClient> commandeClients;
 }
