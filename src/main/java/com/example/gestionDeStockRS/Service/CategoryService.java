@@ -28,6 +28,10 @@ public class CategoryService {
         return categoryRepository.findCategoryById(id);
     }
 
+    public void addCategoryP(Category category){
+        categoryRepository.save(category);
+    }
+
     public void supprimerCategory(Long id)  {
 
         categoryRepository.deleteById(id);

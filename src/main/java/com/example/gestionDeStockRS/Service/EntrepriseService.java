@@ -28,6 +28,10 @@ public class EntrepriseService {
         return entrepriseRepository.findEntrepriseById(id);
     }
 
+    public void addEntreprise(Entreprise entreprise){
+        entrepriseRepository.save(entreprise);
+    }
+
     public void deleteEntrepriseParId(Long id){
         entrepriseRepository.deleteById(id);
         System.out.println("l entreprise avec id = " + id + "a été supprimé avec succé");

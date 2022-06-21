@@ -27,6 +27,10 @@ public class ClientService {
         return clientRepository.findClientById(id);
     }
 
+    public void addClient(Client client){
+        clientRepository.save(client);
+    }
+
     public void supprimerClientParId(Long id){
         clientRepository.deleteById(id);
         System.out.println("le client avec id = " +id+ " a été supprimé");

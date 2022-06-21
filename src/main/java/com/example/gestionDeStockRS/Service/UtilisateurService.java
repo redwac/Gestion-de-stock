@@ -24,6 +24,10 @@ public class UtilisateurService {
         return utilisateurRepository.findUtilisateurById(id);
     }
 
+    public void addUtilisateur(Utilisateur utilisateur){
+        utilisateurRepository.save(utilisateur);
+    }
+
     public void deleteUserParId(Long id){
         utilisateurRepository.deleteById(id);
         System.out.println("Utilisateur avec id = " + id + " a été supprimé avec succé");

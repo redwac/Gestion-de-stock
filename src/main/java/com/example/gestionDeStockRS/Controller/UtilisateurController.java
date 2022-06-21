@@ -28,6 +28,11 @@ public class UtilisateurController {
         return utilisateurService.getUtilisateurByID(id);
     }
 
+    @PostMapping("/create")
+    public void addUtilisateur(@RequestBody Utilisateur utilisateur){
+        utilisateurService.addUtilisateur(utilisateur);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteUserParId(@PathVariable("id") Long id){
         utilisateurService.deleteUserParId(id);

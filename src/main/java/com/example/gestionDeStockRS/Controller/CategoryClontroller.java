@@ -30,6 +30,11 @@ public class CategoryClontroller {
        return categoryService.getCategorieParId(id);
     }
 
+    @PostMapping("/create")
+    public void addCategory(@RequestBody Category category){
+        categoryService.addCategoryP(category);
+    }
+
     @DeleteMapping("/delete/{catid}")
     public void deleteCategoryParId(@PathVariable("catid") Long id){
         categoryService.supprimerCategory(id);

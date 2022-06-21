@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ArticleService {
+public class ArticleService { // extend serialisable pour rendre l'bjet en mode streaming
 
 
     ArticleRepository articleRepository ;
@@ -32,6 +32,7 @@ public class ArticleService {
     }
 
     public void addArticle(Article article){
+
         articleRepository.save(article);
     }
 

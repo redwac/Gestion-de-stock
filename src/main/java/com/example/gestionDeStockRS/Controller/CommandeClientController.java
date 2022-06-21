@@ -31,6 +31,11 @@ public class CommandeClientController {
         return commandeClientService.getCommandeClientByID(id);
     }
 
+    @PostMapping("/create")
+    public void addCmdClient(@RequestBody CommandeClient commandeClient){
+        commandeClientService.addCmdClient(commandeClient);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteCmdClientParId(@PathVariable("id") Long id){
         commandeClientService.deleteCmdClientParId(id);

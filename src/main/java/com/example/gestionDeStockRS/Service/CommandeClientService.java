@@ -25,6 +25,9 @@ public class CommandeClientService {
         return commandeClientRepository.findCommandeClientById(id);
     }
 
+    public void addCmdClient(CommandeClient commandeClient){
+        commandeClientRepository.save(commandeClient);
+    }
     public void deleteCmdClientParId(Long id){
         commandeClientRepository.deleteById(id);
         System.out.println("la commande client avec id = " + id + " a été supprimé");

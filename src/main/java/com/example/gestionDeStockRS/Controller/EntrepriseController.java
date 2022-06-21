@@ -30,6 +30,11 @@ public class EntrepriseController {
         return entrepriseService.getEntrepriseByID(id);
     }
 
+    @PostMapping("/create")
+    public void addEntreprise(@RequestBody Entreprise entreprise){
+        entrepriseService.addEntreprise(entreprise);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteEntrepriseParId(@PathVariable("id") Long id){
         entrepriseService.deleteEntrepriseParId(id);
