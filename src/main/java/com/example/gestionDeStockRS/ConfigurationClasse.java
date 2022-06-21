@@ -39,7 +39,8 @@ public class ConfigurationClasse {
             CommandeClientRepository commandeClientRepository,
             ClientRepository clientRepository){
         return args -> {
-            Category category1 = new Category(1L,"informatique", null);
+            Category category1 = new Category("informatique", null);
+            Category category2 = new Category("electronique", null);
 
             categoryRepository.save(category1);
 
@@ -73,8 +74,6 @@ public class ConfigurationClasse {
 
             articleRepository.saveAll(List.of(art3,art4));
         };
-
-
 
     }
 }

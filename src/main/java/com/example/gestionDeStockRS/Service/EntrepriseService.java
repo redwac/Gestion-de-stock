@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EntrepriseService {
@@ -19,6 +20,16 @@ public class EntrepriseService {
 
     public List<Entreprise> getEntreprises(){
         return entrepriseRepository.findAll();
+    }
 
+
+    public Optional<Entreprise> getEntrepriseByID(Long id){
+
+        return entrepriseRepository.findEntrepriseById(id);
+    }
+
+    public void deleteEntrepriseParId(Long id){
+        entrepriseRepository.deleteById(id);
+        System.out.println("l entreprise avec id = " + id + "a été supprimé avec succé");
     }
 }

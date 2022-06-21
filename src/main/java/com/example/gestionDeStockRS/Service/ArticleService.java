@@ -36,6 +36,9 @@ public class ArticleService {
     }
 
     public void supprimerArticleParId(Long id){
-        articleRepository.deleteArticleById(id);
+        articleRepository.deleteById(id);
+        System.out.println("l article avec id = " + id + " a été supprimé ");
     }
+
+
 }
