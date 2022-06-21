@@ -12,7 +12,7 @@ public interface ArticleRepository extends JpaRepository<Article, Long> {
 
     Optional<Article> findArticleById(Long id);
 
-    void deleteArticleById(Long id);
+    void deleteById(Long id);
 
     // public Article getArticleByCodeArticle(String codeArticle);
 }

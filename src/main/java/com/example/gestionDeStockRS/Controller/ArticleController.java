@@ -3,6 +3,7 @@ package com.example.gestionDeStockRS.Controller;
 import com.example.gestionDeStockRS.Model.Article;
 import com.example.gestionDeStockRS.Service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,9 +30,10 @@ public class ArticleController {
         return articleService.getArticleById(id);
     }
 
-    @PutMapping("/update")
-    public void ajouterArticle(@RequestBody Article article){
+    @PostMapping("/create")
+    public void ajouterArticle(@Validated @RequestBody Article article){
         articleService.addArticle(article);
+        System.out.println("controller ART ");
     }
 
     @DeleteMapping("/delete/{id}")
